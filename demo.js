@@ -1,9 +1,8 @@
-// demo.js
 const { Bank } = require("./src/bank.js");
 const { Banker } = require("./src/banker.js");
 const { logInfo, logError } = require("./src/common/logger.js");
 
-function main() {
+const main = () => {
   try {
     logInfo("🏦 Starting STARACK Banking System...");
 
@@ -41,6 +40,6 @@ function main() {
   } catch (err) {
     logError(`Error in demo: ${err.message}`);
   }
-}
+};
 
 main();

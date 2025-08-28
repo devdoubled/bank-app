@@ -47,25 +47,25 @@ bank-challenge/
 
 **Domain Layer**
 
--bank.js: Represents the Bank, manages customers and transactions.
--banker.js: Represents Bank employees handling operations.
--customer.js: Represents individual customers with balance and transaction history.
+- bank.js: Represents the Bank, manages customers and transactions.
+- banker.js: Represents Bank employees handling operations.
+- customer.js: Represents individual customers with balance and transaction history.
 
 **Common Layer**
 
--logger.js: Centralized logging utility for consistent log outputs.
--types.js: Enum-like constants for transaction types (DEPOSIT, WITHDRAW, TRANSFER).
--utils.js: Shared helper functions for validations and formatting.
+- logger.js: Centralized logging utility for consistent log outputs.
+- types.js: Enum-like constants for transaction types (DEPOSIT, WITHDRAW, TRANSFER).
+- utils.js: Shared helper functions for validations and formatting.
 
 **Tests**
 
--Located in /tests for clean separation from source code.
--Covers deposit, withdraw, transfer, and validation rules.
+- Located in /tests for clean separation from source code.
+- Covers deposit, withdraw, transfer, and validation rules.
 
 **Dockerized**
 
--Multi-stage Dockerfile for separate test and run builds.
--Ensures consistent environment for development and CI/CD.
+- Multi-stage Dockerfile for separate test and run builds.
+- Ensures consistent environment for development and CI/CD.
 
 ## 🚀 Getting Started
 

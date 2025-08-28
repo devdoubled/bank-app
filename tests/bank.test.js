@@ -77,9 +77,9 @@ describe("STARACK Banking System", () => {
     test("View customer transactions", () => {
       customer1.deposit(200);
       customer1.withdraw(50);
-      const txns = customer1.viewTransactions();
-      logInfo(`View transactions of ${customer1.name}`, txns);
-      expect(txns).toHaveLength(2);
+      const transactions = customer1.viewTransactions();
+      logInfo(`View transactions of ${customer1.name}`, transactions);
+      expect(transactions).toHaveLength(2);
     });
 
     test("Banker views total balance", () => {
@@ -100,7 +100,6 @@ describe("STARACK Banking System", () => {
   });
 
   // --- Validation checks ---
-
   describe("Validation checks", () => {
     //Deposit validation
     test("Deposit should fail with negative amount", () => {

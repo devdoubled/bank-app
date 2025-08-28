@@ -4,7 +4,7 @@ const { logInfo, logError } = require("./src/common/logger.js");
 
 const main = () => {
   try {
-    logInfo("🏦 Starting STARACK Banking System...");
+    logInfo("Starting STARACK Banking System...");
 
     // Create bank
     const bank = new Bank("STARACK BANK");
@@ -32,6 +32,10 @@ const main = () => {
     // Check balances
     logInfo(`Customer 1 balance: $${customer1.checkBalance()}`);
     logInfo(`Customer 2 balance: $${customer2.checkBalance()}`);
+
+    // View customer transactions
+    logInfo(`Customer 1 transactions:`, customer1.viewTransactions());
+    logInfo(`Customer 2 transactions:`, customer2.viewTransactions());
 
     // Banker reports
     logInfo(`Total Bank Balance: $${banker.viewTotalBalance()}`);

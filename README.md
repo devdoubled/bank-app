@@ -65,7 +65,6 @@ bank-challenge/
 **Dockerized**
 
 - Multi-stage Dockerfile for separate test and run builds.
-- Ensures consistent environment for development and CI/CD.
 
 ## 🚀 Getting Started
 

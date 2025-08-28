@@ -70,15 +70,15 @@ bank-challenge/
 
 ### ⚙️ Installation (Local)
 
-`npm install`
+```npm install```
 
 **▶️ Run the App**
 
-`node demo.js`
+```node demo.js```
 
 **🧪 Run Tests**
 
-`npm test`
+```npm test```
 
 ### 🐳 Run with Docker
 

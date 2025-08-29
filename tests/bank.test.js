@@ -32,7 +32,7 @@ describe("STARACK Banking System", () => {
       expect(customer1.balance).toBe(100);
     });
 
-    test("Withdraw money from customer", () => {
+    test("Withdraw money from customer account", () => {
       customer1.deposit(200);
       customer1.withdraw(50);
       const balance = customer1.checkBalance();
@@ -102,6 +102,20 @@ describe("STARACK Banking System", () => {
   // --- Validation checks ---
   describe("Validation checks", () => {
     //Deposit validation
+    test("Deposit should fail if amount is not a number", () => {
+      expect(() => {
+        customer1.deposit("100");
+      }).toThrow("Deposit amount must be a number");
+
+      expect(() => {
+        customer1.deposit(null);
+      }).toThrow("Deposit amount must be a number");
+
+      expect(() => {
+        customer1.deposit(NaN);
+      }).toThrow("Deposit amount must be a number");
+    });
+
     test("Deposit should fail with negative amount", () => {
       expect(() => {
         customer1.deposit(-100);
@@ -115,6 +129,20 @@ describe("STARACK Banking System", () => {
     });
 
     //Withdraw validation
+    test("Withdraw should fail if amount is not a number", () => {
+      expect(() => {
+        customer1.withdraw("50");
+      }).toThrow("Withdraw amount must be a number");
+
+      expect(() => {
+        customer1.withdraw(undefined);
+      }).toThrow("Withdraw amount must be a number");
+
+      expect(() => {
+        customer1.withdraw(NaN);
+      }).toThrow("Withdraw amount must be a number");
+    });
+
     test("Withdraw should fail with negative amount", () => {
       customer1.deposit(100);
       expect(() => {
@@ -137,6 +165,22 @@ describe("STARACK Banking System", () => {
     });
 
     //Transfer validation
+    test("Transfer should fail if amount is not a number", () => {
+      customer1.deposit(100);
+
+      expect(() => {
+        customer1.transfer(customer2, "20");
+      }).toThrow("Transfer amount must be a number");
+
+      expect(() => {
+        customer1.transfer(customer2, null);
+      }).toThrow("Transfer amount must be a number");
+
+      expect(() => {
+        customer1.transfer(customer2, NaN);
+      }).toThrow("Transfer amount must be a number");
+    });
+
     test("Transfer should fail to self", () => {
       customer1.deposit(100);
       expect(() => {
